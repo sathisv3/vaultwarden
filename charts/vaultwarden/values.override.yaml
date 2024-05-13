@@ -1,0 +1,59 @@
+database:
+  ## @param database.type Database type, either mysql or postgresql
+  ## Default is a sqlite database.
+  ##
+  type: "postgresql"
+  ## @param database.host Database hostname or IP address
+  ##
+  host: "10.43.92.133"
+  ## @param database.port Database port
+  ## Default for MySQL is 3306, default for PostgreSQL is 5432
+  port: "5432"
+  ## @param database.username Database username
+  ##
+  username: "postgres"
+  ## @param database.password Database password
+  ##
+  password: ""
+  ## @param database.dbName Database name
+  ##
+  dbName: "vaultwarden"
+  ## @param database.uriOverride Manually specify the DB connection string
+  ##
+  uriOverride: ""
+  ## @param database.existingSecret Name of an existing secret containing the database URI
+  ##
+  existingSecret: "postgres.valut.credentials.postgresql.acid.zalan.do"
+  ## @param database.existingSecretKey Key in the existing secret
+  ##
+  existingSecretKey: "password"
+  ## @param database.connectionRetries Number of times to retry the database connection during startup, with 1 second delay between each retry, set to 0 to retry indefinitely.
+  ##
+  connectionRetries: 15
+  ## @param database.maxConnections Define the size of the connection pool used for connecting to the database.
+  ##
+  maxConnections: 10
+
+ingress:
+  ## @param ingress.enabled Deploy an ingress resource.
+  ##
+  enabled: true
+  ## @param ingress.class Ingress resource class
+  ## The Ingress class to use, e. g. "nginx" for a nginx ingress controller or "alb" for a AWS LB controller.
+  #
+  class: "traefik"
+  ## @param ingress.nginxIngressAnnotations Add nginx specific ingress annotations
+  additionalAnnotations:
+    cert-manager.io/issuer: letsencrypt-prod
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+  ##
+  tls: true
+  ## @param ingress.hostname Hostname for the ingress.
+  ##
+  hostname: "vault.internal.v3analytics.in"
+
+  tlsSecret: "cloudflare-token-common"
+  ## @param ingress.nginxAllowList Comma-separated list of IP addresses and subnets to allow.
+
+domain: "https://vaultwarden.contoso.com:9443/"
