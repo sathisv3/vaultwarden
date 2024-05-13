@@ -56,4 +56,20 @@ ingress:
   tlsSecret: "cloudflare-token-common"
   ## @param ingress.nginxAllowList Comma-separated list of IP addresses and subnets to allow.
 
-domain: "https://vaultwarden.contoso.com:9443/"
+domain: "https://vault.internal.v3analytics.in"
+
+trashAutoDeleteDays: "7"
+
+signupDomains: "v3analytics.in"
+
+orgEventsEnabled: "true"
+
+orgCreationUsers: "admin@v3analytics.in"
+
+invitationOrgName: "V3 Analytics Pvt Ltd"
+
+emailChangeAllowed: "false"
+
+timeZone: "Asia/Kolkatta"
+
+orgGroupsEnabled: "true"
