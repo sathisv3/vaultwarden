@@ -2,28 +2,28 @@ database:
   ## @param database.type Database type, either mysql or postgresql
   ## Default is a sqlite database.
   ##
-  type: "postgresql"
+  type: postgresql
   ## @param database.host Database hostname or IP address
   ##
-  host: "10.43.92.133"
+  host: 10.43.108.204
   ## @param database.port Database port
   ## Default for MySQL is 3306, default for PostgreSQL is 5432
-  port: "5432"
+  port: 5432
   ## @param database.username Database username
   ##
-  username: "postgres"
+  username: postgres
   ## @param database.password Database password
   ##
-  password: ""
+  password: "9OBS5bf11v2dHDIdsfLk44s6zwjOiUfSeTgJm8NxkcMCkf98gLQFHnaLVbeNa8Va"
   ## @param database.dbName Database name
   ##
-  dbName: "vaultwarden"
+  dbName: vaultwarden
   ## @param database.uriOverride Manually specify the DB connection string
   ##
-  uriOverride: ""
+  uriOverride: "postgresql://postgres:9OBS5bf11v2dHDIdsfLk44s6zwjOiUfSeTgJm8NxkcMCkf98gLQFHnaLVbeNa8Va@10.43.108.204:5432/postgres"
   ## @param database.existingSecret Name of an existing secret containing the database URI
   ##
-  existingSecret: "postgres.valut.credentials.postgresql.acid.zalan.do"
+  existingSecret: "postgres.vault.credentials.postgresql.acid.zalan.do"
   ## @param database.existingSecretKey Key in the existing secret
   ##
   existingSecretKey: "password"
@@ -51,12 +51,12 @@ ingress:
   tls: true
   ## @param ingress.hostname Hostname for the ingress.
   ##
-  hostname: "vault.internal.v3analytics.in"
+  hostname: "test.internal.v3analytics.in"
 
   tlsSecret: "cloudflare-token-common"
   ## @param ingress.nginxAllowList Comma-separated list of IP addresses and subnets to allow.
 
-domain: "https://vault.internal.v3analytics.in"
+domain: "https://test.internal.v3analytics.in"
 
 trashAutoDeleteDays: "7"
 
